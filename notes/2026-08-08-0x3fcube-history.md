@@ -20,6 +20,16 @@ This is supporting OSINT only. The active target remains Signal Hi-Lo.
 - The July 13, 2026 customer blog post contains a Null Society warning in an HTML comment and links six customer names to paths on `nullsociety.cc`.
 - QuestionableCorp's `robots.txt` disallows `/portal` and `/files`; an unauthenticated GET of `/files` returns a 401 page.
 - A DEF CON 32 (2024) archived custom 404 included an HTML-comment starter clue, `f: thanksforstoppingby`, and directed users to the terminal to submit flags. Hidden page-source clues are therefore a recurring pattern.
+- urlscan's public 2023 and 2024 terminal captures both preserve the original
+  response header `Flag: Jus7Wa1tingOnY0urRespons3`. The resulting candidate
+  `cube{Jus7Wa1tingOnY0urRespons3}` was user-confirmed rejected by the current
+  terminal on 2026-08-08, so it is historical evidence rather than a solve.
+- The official DEF CON 32 contest listing contains Base32
+  `H4QEG5LCMUQEAICEMVTGG33OEAZTEICSMVQWI6JAORXSAZLOM5QWOZJ7`, which decodes
+  to `? Cube @ Defcon 32 Ready to engage?`. It is not flag-shaped.
+- The DEF CON 31 homepage's hidden comment points to a TXT record at
+  `twitter.0x3fcube.com`; its current value is only
+  `https://twitter.com/0x3fcube`.
 - The current DEF CON 34 contest description retains the Aperture Inc./`?Cube` storyline and says the contest covers physical security, web apps, communications systems, and cryptography.
 
 Neither `cube{...}` candidate above was submitted or confirmed accepted during this research.
@@ -31,6 +41,9 @@ Neither `cube{...}` candidate above was submitted or confirmed accepted during t
 - Archived DEF CON 33 terminal: <https://web.archive.org/web/20250809022638/https://terminal.0x3fcube.com/>
 - Archived terminal client: <https://web.archive.org/web/20250809022638id_/https://terminal.0x3fcube.com/js/javascript.js>
 - Archived DEF CON 32 custom 404: <https://web.archive.org/web/20240813213820id_/https://0x3fcube.com/will>
+- Public 2023 terminal scan: <https://urlscan.io/result/e236bc27-1c78-482e-b716-544066d4bac9/>
+- Public 2024 terminal scan: <https://urlscan.io/result/44341cbf-cbfc-4496-8074-7c8475f7c87a/>
+- DEF CON 32 contest listing: <https://defcon.outel.org/dcwp/dc32/activities/c-list/>
 - Current QuestionableCorp site: <https://questionablecorp.cc/>
 - Privacy page: <https://questionablecorp.cc/privacy>
 - Customer bridge post: <https://questionablecorp.cc/blog/our-customers-a-testament-to-excellence>
@@ -58,6 +71,11 @@ print(base64.b32decode(s + "=" * ((8 - len(s) % 8) % 8)).decode())
 - Public search did not reveal a reliable challenge-name/flag list or write-up for DEF CON 33 `?Cube`.
 - The public 0x3fCube Mastodon account currently reports zero posts.
 - Internet Archive indexing did not return a useful QuestionableCorp URL inventory in this session.
+- Wayback's terminal inventory contains only the root page and static CSS,
+  JavaScript, and image assets; it contains no captured hint, message,
+  progress, or challenge API response.
+- urlscan response-body downloads require authentication, and searches for the
+  historical JavaScript SHA-256 values found no public mirror.
 - The six linked Null Society customer paths returned no useful body in a simple unauthenticated fetch.
 
 ## Next smallest test

@@ -10,8 +10,14 @@ Last updated: 2026-08-08
 ## 0x3fCube continuity — team-wide context
 
 - DEF CON 33's archived terminal exposed `submit_base64`, badge registration, progress, hints, and message flows. Its messages directed players to QuestionableCorp and to ask for an employee badge.
-- The live QuestionableCorp site says it was formerly Aperture Inc. and contains two **unsubmitted/unverified** public candidates: `cube{low_hanging_fruits!}` in the home-page source and Base32-decoded `cube{documents_for_privacy!!!}` on the privacy page.
+- The live QuestionableCorp site says it was formerly Aperture Inc. Its current
+  homepage-comment and privacy-page flags, plus the equivalent two values from
+  the archived 2025 site, were all user-confirmed accepted on 2026-08-08. Exact
+  values and evidence are in the private flag tracker.
 - Current QuestionableCorp content links into `nullsociety.cc`, confirming a direct story bridge. See `notes/2026-08-08-0x3fcube-history.md` before testing.
+- urlscan independently confirms the historical terminal response header
+  `Flag: Jus7Wa1tingOnY0urRespons3`, but the wrapped candidate was rejected by
+  the current terminal. Treat it as historical evidence, not a solve.
 
 ## Confirmed wins
 
