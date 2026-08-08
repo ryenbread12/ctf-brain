@@ -29,3 +29,6 @@ Status: investigating
 
 Find an actual game response or source reference that carries a flag/deck path, not a guessed endpoint.
 
+## Full handoff
+
+See [2026-08-07-signal-hilo-full-log.md](2026-08-07-signal-hilo-full-log.md) for the complete API contract, sanitized response examples, race-test results, and dead ends from today.
