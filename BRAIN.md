@@ -4,7 +4,10 @@ Last updated: 2026-08-08
 
 ## Current state
 
-- **Primary next step:** use the 0x3fCube terminal’s `progress`, `hint`, and `inbox` commands to select the next unsolved challenge.
+- **Primary next step:** retain the authenticated 0x3fCube terminal's read-only
+  `progress` output and reconcile its 23 credited solves against the 22 exact
+  values in the private tracker; then use `hint` and `inbox` to select the next
+  unsolved challenge.
 - **Rule of engagement:** work one target at a time; record evidence before changing course.
 
 ## 0x3fCube continuity — team-wide context
@@ -25,6 +28,11 @@ Last updated: 2026-08-08
   Five current-team entries missing from the latest pasted terminal batch were
   identified for submission: three QuestionableCorp values, the Null Bingo cap,
   and War Protocol's exposed-hand result.
+- **One credited solve remains unnamed:** the public leaderboard reports 23
+  solves for the team account and 217 total challenges. Current files and all
+  tracker revisions contain no additional accepted value, so the discrepancy
+  requires the authenticated read-only `progress`/history view rather than more
+  public flag guessing.
 
 - **C2Casino bot-gate flag — submitted successfully**
   - Source: an HTML comment on C2Casino's root page.

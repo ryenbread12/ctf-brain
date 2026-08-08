@@ -112,3 +112,53 @@ Repeat the four exact searches using an authenticated GitHub code-search session
   and no C2Casino/NullSociety material. The historically linked
   `isaidnocookies/Crypto-Converter` repository is an unrelated Qt
   cryptocurrency/QR utility; its full history contains no relevant strings.
+
+## Follow-up: archive, certificate, DNS, and official-source mega-sweep
+
+- Certificate Transparency was enumerated through both `crt.sh` and Cert
+  Spotter. The only explicit names were the already-known roots and public
+  `api`, `terminal`, `hello`, and `portal` hosts plus wildcard certificates.
+  Wildcard coverage means CT cannot enumerate every historical host.
+- Passive hostname sources added only `www.api.0x3fcube.com` and
+  `www.terminal.0x3fcube.com`. They were not actively probed because they are
+  not separately named in the current scope document. Other passive-DNS APIs
+  were empty, unavailable, or required authentication.
+- Every distinct accessible Wayback body for the three official story roots
+  was inspected. The 2023, 2024, and 2025 0x3fCube pages, archived terminal
+  client, and archived QuestionableCorp pages contained only the already-known
+  historical breadcrumbs and accepted QCorp values. Common Crawl reproduced
+  the same 2024 page; Arquivo returned no useful capture.
+- Current public HTML, JavaScript, robots files, linked first-party modules,
+  and apparent source-map paths were scanned across 0x3fCube,
+  QuestionableCorp, NullSociety, and C2Casino. Automated Base32/Base64 decoding
+  found only the already-known QCorp privacy token, the DEF CON 32 promotional
+  sentence, and the terminal help example. No new encoded flag was found.
+- Official DEF CON 31, 32, 33, and 34 contest pages and forum branches were
+  compared. DC31 exposes the original four-post Cube section; DC33 introduces
+  the Aperture/QuestionableCorp storyline; DC34 continues it. No public
+  post-event flag list or write-up was present.
+- The public 2023 Cube PNG was inspected visually and structurally. It has only
+  standard PNG chunks, no trailing payload or text metadata, and no tested
+  `cube{`, `C2{`, URL, or flag prefix in common channel/bit-plane layouts. The
+  official DC33 and DC34 WebP artwork is byte-identical between the two years
+  and contains one normal VP8 chunk with no metadata or appended payload.
+- The organizer's official DEF CON Mastodon account reports zero public posts.
+- Generic public GitHub commit searches and the only challenge-era public
+  participant repository that looked temporally relevant produced no Cube,
+  Aperture, NullSociety, CTF, or flag artifact. GitHub code search still
+  requires sign-in in the available browser session.
+
+## Scoreboard reconciliation finding
+
+- The public leaderboard currently reports **217 total challenges** and a
+  maximum public solve count of **29**. The team account is publicly credited
+  with **23** solves, while the private tracker contains **22** distinct
+  accepted/already-credited values.
+- A full audit of every flag-shaped value in the current vault and all Git
+  tracker revisions found no omitted accepted value: every extra historical
+  string was already documented as rejected, a wrapper mismatch, a placeholder,
+  or an example. Therefore one credited solve remains unnamed in the vault.
+- The next deterministic step is account-specific and read-only: retain the
+  authenticated terminal output of `progress`, then `inbox` and `hint` if
+  needed, and map its solved challenge names to the 22-entry tracker. Public
+  archives cannot disclose that account-specific mapping.
