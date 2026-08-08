@@ -11,8 +11,8 @@ Last updated: 2026-08-08
 
 - DEF CON 33's archived terminal exposed `submit_base64`, badge registration, progress, hints, and message flows. Its messages directed players to QuestionableCorp and to ask for an employee badge.
 - The live QuestionableCorp site says it was formerly Aperture Inc. Its current
-  homepage-comment and privacy-page flags, plus the equivalent two values from
-  the archived 2025 site, were all user-confirmed accepted on 2026-08-08. Exact
+  and archived content, Trust Center, authenticated file listing, and assistant
+  history now account for seven accepted or already credited flags. Exact
   values and evidence are in the private flag tracker.
 - Current QuestionableCorp content links into `nullsociety.cc`, confirming a direct story bridge. See `notes/2026-08-08-0x3fcube-history.md` before testing.
 - urlscan independently confirms the historical terminal response header
@@ -20,6 +20,11 @@ Last updated: 2026-08-08
   the current terminal. Treat it as historical evidence, not a solve.
 
 ## Confirmed wins
+
+- **Private flag ledger reconciled:** 22 accepted or already credited entries.
+  Five current-team entries missing from the latest pasted terminal batch were
+  identified for submission: three QuestionableCorp values, the Null Bingo cap,
+  and War Protocol's exposed-hand result.
 
 - **C2Casino bot-gate flag — submitted successfully**
   - Source: an HTML comment on C2Casino's root page.

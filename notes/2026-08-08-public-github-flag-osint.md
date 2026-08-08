@@ -2,6 +2,25 @@
 
 Status: investigated
 
+## Team-ledger reconciliation
+
+After refreshing the nested team repository on 2026-08-08, five exact accepted
+values were present on team `origin/main` but absent from the user's latest
+terminal transcript:
+
+- `cube{complementary_controls_verified}`
+- `cube{authorized_for_internal_ACCESS}`
+- `cube{h1st0ry_1s_wr1tt3n_by_th3_cl13nt}`
+- `C2{bingo_bankrupt}`
+- `C2{the_hand_never_lies}`
+
+The same transcript newly confirmed `C2{house_always_folds}` as already
+credited, and confirmed the lowercase `cube{mach_was_here}` and
+`cube{my_crime_is_that_of_curiosity}` wrappers plus literal `C2{example}` as
+accepted or already credited. The private nested tracker was reconciled to 22
+accepted or already credited values. Rejected variants remain segregated from
+the submission list.
+
 ## Goal
 
 Find public GitHub repositories containing any of the four accepted flag strings supplied on 2026-08-08, on the theory that nearby files may expose other challenge material.
