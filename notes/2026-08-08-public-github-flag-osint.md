@@ -74,3 +74,22 @@ Repeat the four exact searches using an authenticated GitHub code-search session
 - GitHub's authenticated code search remains the only direct GitHub surface not
   available in this environment. Exact probe-string confirmation against a
   third-party code index remains intentionally unperformed.
+
+## Follow-up: lineage and writeup sweep
+
+- The only public fork of `c2society/building-ctf-challenges`,
+  [TheRealKraytonian/building-ctf-challenges](https://github.com/TheRealKraytonian/building-ctf-challenges),
+  is a three-commit template mirror. Its flags are `TPZ{FLAGZZZZ...}`
+  placeholders and it contains no NullSociety, Casino, probe, or supplied-flag
+  material.
+- Public GitHub commit and issue/PR searches returned zero hits for the probe
+  prefix, probe identifier, derived candidate, `C2Casino`,
+  `hello.nullsociety.cc`, `nothumansociety`, and the supplied flag payloads.
+- Public repository and user alias searches found no `c2casino`, `0x3fcube`, or
+  `nothumansociety` repository/user. The two newer `NullSociety` identities
+  (`NullSocietys` and `nullsocietyco`) expose no public repositories.
+- `CubeMastery/CubeCTF-2025` and two other CubeCTF-labelled repositories were
+  checked as possible writeup leaks. They contain unrelated `cube{...}` flags
+  and no C2Casino/NullSociety material. The historically linked
+  `isaidnocookies/Crypto-Converter` repository is an unrelated Qt
+  cryptocurrency/QR utility; its full history contains no relevant strings.
