@@ -31,6 +31,10 @@ This is supporting OSINT only. The active target remains Signal Hi-Lo.
   `twitter.0x3fcube.com`; its current value is only
   `https://twitter.com/0x3fcube`.
 - The current DEF CON 34 contest description retains the Aperture Inc./`?Cube` storyline and says the contest covers physical security, web apps, communications systems, and cryptography.
+- The public DEF CON 32 `? Cube` forum subforum contains four announcement topics from June 2024, all with zero replies; it does not expose a post-event flag list or write-up.
+- The DEF CON 32 contest page links the 2024 event directly to `0x3fcube.com` and repeats the same Base32 promotional breadcrumb; the linked discussion thread contains no additional flag-shaped text.
+- A fresh Cert Spotter inventory for the three known roots exposed only the already-known names: `api.0x3fcube.com`, `terminal.0x3fcube.com`, `hello.nullsociety.cc`, `portal.questionablecorp.cc`, and wildcard/root certificates. No new public hostname was found.
+- A fresh public-source search for `0x3fcube`, `questionablecorp`, `nullsociety`, and the historical header string found no indexed repository or source hit. GitHub code search itself remains login-gated/rate-limited, so this is not proof that no private or unindexed mirror exists.
 
 Neither `cube{...}` candidate above was submitted or confirmed accepted during this research.
 
@@ -77,6 +81,7 @@ print(base64.b32decode(s + "=" * ((8 - len(s) % 8) % 8)).decode())
 - urlscan response-body downloads require authentication, and searches for the
   historical JavaScript SHA-256 values found no public mirror.
 - The six linked Null Society customer paths returned no useful body in a simple unauthenticated fetch.
+- The legacy `twitter.0x3fcube.com` Wayback/API path was unavailable during this sweep (archive request blocked/rate-limited), and public search returned no indexed historical posts. Its known current TXT value remains only the public profile URL.
 
 ## Next smallest test
 
