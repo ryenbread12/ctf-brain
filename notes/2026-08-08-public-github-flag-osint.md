@@ -30,7 +30,11 @@ Find public GitHub repositories containing any of the four accepted flag strings
   - `IMZHW5DIMVPWQ33VONSV6ZDPMVZW45C7MFWHOYLZONPXO2LOPU======`
   - `IMZHW53FNRRW63LFL52G6X3OOVWGY43PMNUWK5DZPU======`
   - `MMZHW4TVNRSXGX3BOJSV64TVNRSXG7I=`
-- An initial Base64 pass, before the encoding was corrected to Base32, likewise returned zero results on the same GitHub surfaces and public web index.
+- Base64 was checked in both padded and unpadded forms and returned zero results on the same GitHub surfaces and public web index. These values contain no `+` or `/`, so their Base64URL forms are identical to the unpadded forms:
+  - `QzJ7aG91c2VfYWx3YXlzX2ZvbGRzfQ==`
+  - `QzJ7dGhlX2hvdXNlX2RvZXNudF9hbHdheXNfd2lufQ==`
+  - `QzJ7d2VsY29tZV90b19udWxsc29jaWV0eX0=`
+  - `YzJ7cnVsZXNfYXJlX3J1bGVzfQ==`
 
 ## Reproduction / evidence
 
