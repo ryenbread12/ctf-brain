@@ -4,5 +4,6 @@
 | --- | --- | --- |
 | Solved | C2Casino bot-gate | [2026-08-07-c2casino-bot-gate.md](2026-08-07-c2casino-bot-gate.md) |
 | Investigating | Signal Hi-Lo | [summary](2026-08-07-signal-hilo.md) · [full log](2026-08-07-signal-hilo-full-log.md) |
+| Investigated | Public GitHub flag OSINT | [2026-08-08-public-github-flag-osint.md](2026-08-08-public-github-flag-osint.md) |
 
 Add a row when opening a new target. Keep detailed work in its own note.
