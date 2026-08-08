@@ -48,7 +48,7 @@ case "${1:-}" in
   publish)
     shift || true
     [[ $# -gt 0 ]] || { echo "Usage: ./brain publish <message>" >&2; exit 2; }
-    git add -- AGENTS.md BRAIN.md notes .gitignore
+    git add -- AGENTS.md BRAIN.md notes casino-zips .gitignore
     if git diff --cached --quiet; then
       echo "No tracked note changes to publish."
       exit 0
