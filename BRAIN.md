@@ -1,11 +1,17 @@
 # Team CTF Brain
 
-Last updated: 2026-08-07
+Last updated: 2026-08-08
 
 ## Current state
 
 - **Primary next step:** use the 0x3fCube terminal’s `progress`, `hint`, and `inbox` commands to select the next unsolved challenge.
 - **Rule of engagement:** work one target at a time; record evidence before changing course.
+
+## 0x3fCube continuity — team-wide context
+
+- DEF CON 33's archived terminal exposed `submit_base64`, badge registration, progress, hints, and message flows. Its messages directed players to QuestionableCorp and to ask for an employee badge.
+- The live QuestionableCorp site says it was formerly Aperture Inc. and contains two **unsubmitted/unverified** public candidates: `cube{low_hanging_fruits!}` in the home-page source and Base32-decoded `cube{documents_for_privacy!!!}` on the privacy page.
+- Current QuestionableCorp content links into `nullsociety.cc`, confirming a direct story bridge. See `notes/2026-08-08-0x3fcube-history.md` before testing.
 
 ## Confirmed wins
 
@@ -24,4 +30,3 @@ Last updated: 2026-08-07
 ## Do not store here
 
 Cookies, bearer tokens, passwords, SSH keys, live VM credentials, or exported HAR files.
-
