@@ -55,3 +55,22 @@ Find public GitHub repositories containing any of the four accepted flag strings
 ## Next smallest test
 
 Repeat the four exact searches using an authenticated GitHub code-search session. If that still returns zero, optionally obtain explicit approval before querying a third-party public-code index such as grep.app.
+
+## Follow-up: historical repository sweep
+
+- The public `c2society` account exposes five repositories: `lockpicking`,
+  `building-ctf-challenges`, `CTFd`, `CTFd-Docker-Challenges`, and
+  `dc702.github.io`. All available branches, pull-request refs, current trees,
+  and full local histories were searched for the probe identifiers, NullSociety
+  terms, C2Casino terms, and the supplied flag payloads; no relevant match was
+  found.
+- `c2society/dc702.github.io` is an unrelated 2022 DC702 landing page. The
+  CTF-building repository documents the older `TPZ{...}` event format and its
+  example flags, not the current C2Casino material.
+- The current CubeCTF subtree in [sajjadium/ctf-archives](https://github.com/sajjadium/ctf-archives/tree/main/ctfs/CubeCTF/2025), all 12 embedded challenge ZIPs, and the archive's full commit history contained only the previously recorded format examples/placeholders. No supplied flag, probe identifier, or related casino source appeared.
+- The public `thetinyclaw` repository listing does not expose the historical
+  `defcon-cube-ctf` remote; the available local clone was searched across all
+  refs and its history, with no probe identifier or derived candidate present.
+- GitHub's authenticated code search remains the only direct GitHub surface not
+  available in this environment. Exact probe-string confirmation against a
+  third-party code index remains intentionally unperformed.
