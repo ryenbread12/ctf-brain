@@ -12,3 +12,6 @@ session*.json
 artifacts/
 tmp/
 work/
+
+# Separate local checkout with its own Git history and AGENTS.md.
+defcon-cube-ctf/
