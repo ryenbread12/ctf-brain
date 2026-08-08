@@ -25,6 +25,12 @@ Find public GitHub repositories containing any of the four accepted flag strings
   - `cube{12.34,-56.78}`
   - `cube{insert_password_here}`
 - Other broad-prefix matches were verified false positives, including CSS class `.c2{`, C++ initialization such as `c2{refcol}`, generated IDs such as `C2{x_index}{y_index}`, and identifiers containing `dataCube{...}`.
+- Exact Base32 searches also returned zero GitHub repository, issue/PR, commit-message, or ordinary public-web hits. Both padded and unpadded variants were checked:
+  - `IMZHW2DPOVZWKX3BNR3WC6LTL5TG63DEON6Q====`
+  - `IMZHW5DIMVPWQ33VONSV6ZDPMVZW45C7MFWHOYLZONPXO2LOPU======`
+  - `IMZHW53FNRRW63LFL52G6X3OOVWGY43PMNUWK5DZPU======`
+  - `MMZHW4TVNRSXGX3BOJSV64TVNRSXG7I=`
+- An initial Base64 pass, before the encoding was corrected to Base32, likewise returned zero results on the same GitHub surfaces and public web index.
 
 ## Reproduction / evidence
 
@@ -32,6 +38,7 @@ Find public GitHub repositories containing any of the four accepted flag strings
 - Searches used both each full flag and its distinctive payload without braces.
 - Public web checks included exact `site:github.com` and `site:gist.github.com` queries.
 - Sourcegraph searches used generic, non-secret prefixes only. Filters included forks and archived repositories, excluded vendor/minified paths during focused passes, and required flag-like payload characters/lengths.
+- The exact Base32 strings were searched only through GitHub's public REST search surfaces and the ordinary web search index. They were not sent to Sourcegraph because the encodings are reversible private-team data and that destination was not explicitly authorized.
 - The candidate `JurJansen/nullsociety.fun` repository was cloned to a temporary directory, searched with `rg`, unshallowed, and checked with `git log -S` across all history.
 
 ## Negative results
