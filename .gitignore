@@ -1,0 +1,14 @@
+.DS_Store
+.obsidian/
+.env
+.env.*
+*.har
+*.zip
+*.7z
+*.tar
+*.gz
+cookies.txt
+session*.json
+artifacts/
+tmp/
+work/

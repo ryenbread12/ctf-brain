@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$ROOT"
+
+usage() {
+  cat <<'EOF'
+Usage: ./brain <command>
+
+  sync                 Pull the current branch from the shared Git repository.
+  publish <message>    Commit Markdown note changes, pull safely, then push them.
+  status               Show repository state and the team’s current state.
+  focus                Print BRAIN.md and the notes index.
+  search <words>       Search shared notes and BRAIN.md.
+  note <title> <text>  Append a timestamped quick finding to notes/quick-log.md.
+
+Examples:
+  ./brain search "leaked deck"
+  ./brain note "Hi-Lo state" "GET /api/hilo/state confirmed currentCard field"
+  ./brain publish "Record verified Hi-Lo API behavior"
+EOF
+}
+
+branch() {
+  git branch --show-current
+}
+
+has_origin() {
+  git remote get-url origin >/dev/null 2>&1
+}
+
+sync() {
+  if ! has_origin; then
+    echo "No shared remote yet. The maintainer needs to add origin first."
+    return 0
+  fi
+  local current_branch
+  current_branch="$(branch)"
+  [[ -n "$current_branch" ]] || { echo "Not on a branch." >&2; return 1; }
+  git pull --rebase --autostash origin "$current_branch"
+}
+
+case "${1:-}" in
+  sync)
+    sync
+    ;;
+  publish)
+    shift || true
+    [[ $# -gt 0 ]] || { echo "Usage: ./brain publish <message>" >&2; exit 2; }
+    git add -- AGENTS.md BRAIN.md notes .gitignore
+    if git diff --cached --quiet; then
+      echo "No tracked note changes to publish."
+      exit 0
+    fi
+    git commit -m "$*"
+    sync
+    if has_origin; then
+      git push -u origin "$(branch)"
+      echo "Published team notes."
+    else
+      echo "Committed locally. Add the shared remote, then run ./brain sync and git push -u origin $(branch)."
+    fi
+    ;;
+  status)
+    echo "Vault: $ROOT"
+    printf '\n'
+    git status --short
+    printf '\n'
+    sed -n '1,100p' BRAIN.md
+    ;;
+  focus)
+    sed -n '1,160p' BRAIN.md
+    printf '\n--- Notes ---\n'
+    sed -n '1,120p' notes/INDEX.md
+    ;;
+  search)
+    shift || true
+    [[ $# -gt 0 ]] || { echo "Provide search words." >&2; exit 2; }
+    rg -n -i --glob '*.md' "$*" BRAIN.md notes || true
+    ;;
+  note)
+    shift || true
+    [[ $# -ge 2 ]] || { echo "Usage: ./brain note <title> <text>" >&2; exit 2; }
+    title="$1"
+    shift
+    printf '\n## %s — %s\n\n%s\n' "$(date '+%Y-%m-%d %H:%M %Z')" "$title" "$*" >> notes/quick-log.md
+    echo "Added to notes/quick-log.md. Run ./brain publish \"Log $title\" when ready to share it."
+    ;;
+  -h|--help|help|"")
+    usage
+    ;;
+  *)
+    echo "Unknown command: $1" >&2
+    usage >&2
+    exit 2
+    ;;
+esac
